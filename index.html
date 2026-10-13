@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEON DYNASTY: FURIA ARCADE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-wrap">
+  <canvas id="gameCanvas" width="960" height="540"></canvas>
+
+  <!-- MENU PRINCIPAL -->
+  <div id="screen-menu" class="screen">
+    <h1 class="game-title">NEON DYNASTY<span>FURIA ARCADE</span></h1>
+    <div class="menu-buttons">
+      <button id="btn-play" class="arcade-btn">JUGAR</button>
+      <button id="btn-controls" class="arcade-btn">CONTROLES</button>
+      <button id="btn-info" class="arcade-btn">INFORMACIÓN</button>
+    </div>
+    <p class="footer-note">Pulsa JUGAR para comenzar el combate</p>
+  </div>
+
+  <!-- CONTROLES -->
+  <div id="screen-controls" class="screen hidden">
+    <h2 class="section-title">CONTROLES</h2>
+    <div class="controls-grid">
+      <div><b>A / D</b><span>Moverse Izq / Der</span></div>
+      <div><b>W</b><span>Saltar</span></div>
+      <div><b>S</b><span>Agacharse</span></div>
+      <div><b>J</b><span>Golpe rápido</span></div>
+      <div><b>K</b><span>Golpe fuerte</span></div>
+      <div><b>L</b><span>Patada</span></div>
+      <div><b>U</b><span>Ataque especial</span></div>
+      <div><b>I</b><span>Bloquear</span></div>
+      <div><b>ESC</b><span>Pausa</span></div>
+    </div>
+    <button class="arcade-btn back-btn" data-back="screen-menu">VOLVER</button>
+  </div>
+
+  <!-- INFO -->
+  <div id="screen-info" class="screen hidden">
+    <h2 class="section-title">INFORMACIÓN</h2>
+    <p class="info-text">NEON DYNASTY es un juego de peleas arcade 2D 100% original, hecho con HTML5 Canvas y JavaScript puro. Elige tu luchador, domina los combos y gana 2 de 3 rondas para vencer.</p>
+    <button class="arcade-btn back-btn" data-back="screen-menu">VOLVER</button>
+  </div>
+
+  <!-- SELECCION DE PERSONAJE -->
+  <div id="screen-select" class="screen hidden">
+    <h2 class="section-title">ELIGE TU LUCHADOR</h2>
+    <div id="char-grid" class="char-grid"></div>
+    <div id="char-detail" class="char-detail"></div>
+    <div class="stage-pick">
+      <span>ESCENARIO:</span>
+      <button class="stage-btn selected-stage" data-stage="0">CALLE NOCTURNA</button>
+      <button class="stage-btn" data-stage="1">DOJO ABANDONADO</button>
+    </div>
+    <button id="btn-start-fight" class="arcade-btn" disabled>COMENZAR PELEA</button>
+    <button class="arcade-btn back-btn" data-back="screen-menu">VOLVER</button>
+  </div>
+
+  <!-- PAUSA -->
+  <div id="screen-pause" class="screen hidden">
+    <h2 class="section-title">PAUSA</h2>
+    <div class="menu-buttons">
+      <button id="btn-resume" class="arcade-btn">CONTINUAR</button>
+      <button id="btn-pause-menu" class="arcade-btn">VOLVER AL MENÚ</button>
+    </div>
+  </div>
+
+  <!-- FIN DE RONDA -->
+  <div id="screen-roundend" class="screen hidden">
+    <h2 id="roundend-title" class="section-title">ROUND WIN</h2>
+    <p id="roundend-sub" class="footer-note"></p>
+  </div>
+
+  <!-- FIN DEL COMBATE -->
+  <div id="screen-matchend" class="screen hidden">
+    <h2 id="matchend-title" class="section-title">YOU WIN</h2>
+    <p id="matchend-sub" class="footer-note"></p>
+    <div class="menu-buttons">
+      <button id="btn-rematch" class="arcade-btn">REJUGAR</button>
+      <button id="btn-tomenu" class="arcade-btn">VOLVER AL MENÚ</button>
+    </div>
+  </div>
+
+</div>
+<script src="game.js"></script>
+</body>
+</html>
